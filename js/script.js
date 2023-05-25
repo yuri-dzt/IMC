@@ -1,6 +1,7 @@
 function minhaResposta() {
     const btn = document.querySelector("#btn");
     const rpt = document.querySelector("#rpt");
+    const operation = document.querySelector("#op");
     const resultFinal = [];
     
     function conta(e) {
@@ -21,28 +22,30 @@ function minhaResposta() {
         }
 
         const math = {
-           rpts: peso / (altura **2), 
+            rpts: peso / (altura **2), 
         };
+
+        operation.innerHTML = math.rpts.toFixed(2);
 
         resultFinal.push(math)
 
         if(math.rpts<18.5){
-            rpt.innerHTML = "Abaixo do peso";
+            rpt.innerHTML = "(Abaixo do peso)";
 
         }else if(math.rpts>18.5 && math.rpts<24.9){
-            rpt.innerHTML = "Peso Normal";
+            rpt.innerHTML = "(Peso Normal)";
 
         }else if(math.rpts>25 && math.rpts<29.9){
-            rpt.innerHTML = "Sobrepeso"
+            rpt.innerHTML = "(Sobrepeso)"
 
         }else if(math.rpts>30 && math.rpts<34.9){
-            rpt.innerHTML = "Obesidade grau 1"
+            rpt.innerHTML = "(Obesidade grau 1)"
             
         }else if(math.rpts>35 && math.rpts<39.9){
-            rpt.innerHTML = "Obesidade grau 2"
+            rpt.innerHTML = "(Obesidade grau 2)"
 
         }else if(math.rpts>40){
-            rpt.innerHTML = "Obesidade grau 3"
+            rpt.innerHTML = "(Obesidade grau 3)"
         }
     }
 
